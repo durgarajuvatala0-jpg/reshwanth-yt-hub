@@ -10,58 +10,755 @@
     <meta property="og:title" content="RESHWANTH YT | Official Creator Hub">
     <meta property="og:description" content="Explore videos, shorts, and join the community">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://reshwanth-yt-hub.pages.dev">
+    <meta property="og:url" content="https://reshwanthyt.pages.dev">
     
     <title>RESHWANTH YT | Official Creator Hub</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23ff1744' width='100' height='100' rx='8'/><polygon points='35,25 35,75 75,50' fill='white'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #07090e;
+            --bg-alt: #0d1117;
+            --panel: rgba(19, 21, 28, 0.95);
+            --card: #11151d;
+            --line: rgba(255, 255, 255, 0.08);
+            --text: #f7f8fb;
+            --muted: #aeb4c3;
+            --red: #ff1744;
+            --red-dark: #e60036;
+            --gold: #f5d66e;
+            --gold-2: #ffb800;
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(ellipse at top right, rgba(255, 23, 68, 0.15), transparent 30%), var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .container {
+            width: min(1200px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(7, 9, 14, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .navbar {
+            padding: 18px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.25px;
+            white-space: nowrap;
+        }
+
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 30px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--red), #d90d38);
+            box-shadow: 0 0 20px rgba(255, 23, 68, 0.4);
+            font-size: 0.85rem;
+            color: white;
+            font-weight: 900;
+        }
+
+        .logo-text strong {
+            color: var(--red);
+            margin-left: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            color: #dfe5f2;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a {
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--card);
+            color: white;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-toggle span {
+            width: 22px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: 0.3s ease;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            color: white;
+            box-shadow: 0 10px 28px rgba(255, 23, 68, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(255, 23, 68, 0.45);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn.sm {
+            padding: 10px 16px;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0 20px;
+        }
+
+        .hero-box {
+            position: relative;
+            min-height: 500px;
+            border-radius: 50%;
+            border: 6px solid var(--gold);
+            background: radial-gradient(circle at 45% 35%, rgba(255, 214, 110, 0.2), transparent 45%), 
+                        radial-gradient(circle at center, #0a0c11, #05060a 60%);
+            display: grid;
+            place-items: center;
+            box-shadow: 0 0 0 12px rgba(245, 214, 110, 0.1),
+                        0 0 40px rgba(245, 214, 110, 0.25),
+                        0 0 80px rgba(255, 176, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: min(90%, 820px);
+            text-align: center;
+            padding: 32px 24px;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-block;
+            color: #ffbbca;
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(3rem, 7vw, 7.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.08em;
+            font-weight: 900;
+            color: var(--text);
+        }
+
+        h1 span {
+            color: var(--red);
+            text-shadow: 0 0 30px rgba(255, 23, 68, 0.5);
+        }
+
+        .hero-description {
+            max-width: 680px;
+            margin: 20px auto 0;
+            color: #dfe4ee;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .badge {
+            padding: 9px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #eef1f6;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 32px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .section-header > div:first-child h2 {
+            margin: 8px 0 4px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            font-size: 0.75rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            letter-spacing: -0.04em;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        .section-subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* Grid Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-6 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(245, 214, 110, 0.4);
+            box-shadow: var(--shadow);
+        }
+
+        .video-thumb {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: #1b1f29;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .video-thumb img {
+            transform: scale(1.08);
+        }
+
+        .play-button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 40px;
+            border-radius: 14px;
+            background: rgba(255, 23, 68, 0.9);
+            box-shadow: 0 8px 24px rgba(255, 23, 68, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .play-button {
+            background: var(--red);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-button::after {
+            content: "";
+            position: absolute;
+            left: 21px;
+            top: 12px;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 12px solid white;
+        }
+
+        .card-info {
+            padding: 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-info h3 {
+            margin: 0 0 8px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .card-meta {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-top: auto;
+        }
+
+        /* Shorts Grid */
+        .short-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .short-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 214, 110, 0.4);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        .short-thumb {
+            position: relative;
+            aspect-ratio: 9 / 16;
+            background: #1b1f29;
+            overflow: hidden;
+        }
+
+        .short-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .short-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            background: rgba(255, 23, 68, 0.95);
+            font-size: 0.65rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            backdrop-filter: blur(4px);
+        }
+
+        .short-title {
+            padding: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* CTA Section */
+        .cta-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 32px 36px;
+            border: 1px solid rgba(255, 23, 68, 0.25);
+            border-radius: 24px;
+            background: linear-gradient(110deg, rgba(38, 10, 15, 0.9), rgba(17, 21, 29, 0.95) 75%);
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .cta-text h2 {
+            margin: 10px 0 6px;
+        }
+
+        .cta-text p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .about-card {
+            padding: 28px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            border-color: rgba(245, 214, 110, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .about-card h2 {
+            margin: 12px 0 16px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin: 0 0 18px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0 16px;
+        }
+
+        .stat-item {
+            padding: 16px 12px;
+            text-align: center;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(245, 214, 110, 0.08);
+            border-color: rgba(245, 214, 110, 0.3);
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .stat-item small {
+            color: var(--muted);
+            font-size: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 36px 0 44px;
+            color: var(--muted);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 28px;
+        }
+
+        .footer-section h4 {
+            margin: 0 0 14px;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section ul {
+            margin: 0;
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grid-4 {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .grid-6 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                background: rgba(17, 21, 29, 0.98);
+                border-bottom: 1px solid var(--line);
+                z-index: 40;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 14px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .nav-container > .btn {
+                display: none;
+            }
+
+            .hero-box {
+                min-height: 450px;
+                border-radius: 30px;
+            }
+
+            .grid-6 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: calc(100% - 24px);
+            }
+
+            h1 {
+                font-size: clamp(2.2rem, 6vw, 4rem);
+            }
+
+            h2 {
+                font-size: clamp(1.4rem, 3vw, 2rem);
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .grid-4,
+            .grid-6,
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-box {
+                min-height: 380px;
+                border-radius: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="header" id="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <!-- Logo/Brand -->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-container">
                     <a href="#home" class="logo">
                         <span class="logo-icon">▶</span>
                         <span class="logo-text">RESHWANTH <strong>YT</strong></span>
                     </a>
 
-                    <!-- Navigation Menu -->
-                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                        <span class="hamburger"></span>
-                    </button>
-
                     <nav class="nav-menu" id="navMenu">
-                        <a href="#home" class="nav-link">Home</a>
-                        <a href="#videos" class="nav-link">Videos</a>
-                        <a href="#shorts" class="nav-link">Shorts</a>
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="#home">Home</a>
+                        <a href="#videos">Videos</a>
+                        <a href="#shorts">Shorts</a>
+                        <a href="#about">About</a>
                     </nav>
 
-                    <!-- Subscribe Button -->
-                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="btn btn-primary sm">
                         ▶ Subscribe
                     </a>
+
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="home">
         <!-- Hero Section -->
-        <section class="hero" id="home">
+        <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
+                <div class="hero-box">
+                    <div class="hero-content">
                         <span class="hero-label">Welcome to my channel</span>
-                        <h1 class="hero-title">RESHWANTH <span class="highlight">YT</span></h1>
+                        <h1>RESHWANTH <span>YT</span></h1>
                         <p class="hero-description">
-                            Explore. Watch. Enjoy. Discover my latest videos, entertaining Shorts, 
-                            village life, cars, tech and more.
+                            Explore. Watch. Enjoy. Discover my latest videos, entertaining Shorts, village life, cars, tech and more.
                         </p>
                         <div class="hero-actions">
                             <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -74,19 +771,15 @@
                         <div class="hero-badges">
                             <span class="badge">🎬 New Videos</span>
                             <span class="badge">⚡ Shorts</span>
-                            <span class="badge">❤️ Community</span>
+                            <span class="badge">❤️ Creator Community</span>
                         </div>
-                    </div>
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" 
-                             alt="RESHWANTH YT Hero Image" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Videos Section -->
-        <section class="videos-section" id="videos">
+        <section id="videos">
             <div class="container">
                 <div class="section-header">
                     <div>
@@ -94,22 +787,58 @@
                         <h2>Latest Videos</h2>
                         <p class="section-subtitle">Recent uploads from RESHWANTH YT</p>
                     </div>
-                    <a href="https://www.youtube.com/@Reshwanth_YT/videos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <a href="https://www.youtube.com/@Reshwanth_YT/videos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary sm">
                         View All ↗
                     </a>
                 </div>
 
-                <div class="videos-grid" id="videosGrid">
-                    <div class="loading-status">
-                        <p>Loading videos...</p>
-                        <p class="text-muted">Powered by YouTube Data API</p>
-                    </div>
+                <div class="grid-4" id="videosGrid">
+                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="card">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Latest Video">
+                            <span class="play-button"></span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Discover My Latest Content</h3>
+                            <div class="card-meta">YouTube Upload</div>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="card">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Cars & Auto">
+                            <span class="play-button"></span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Cars & Auto Reviews</h3>
+                            <div class="card-meta">YouTube Upload</div>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="card">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Tech Gadgets">
+                            <span class="play-button"></span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Tech & Gadgets Updates</h3>
+                            <div class="card-meta">YouTube Upload</div>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="card">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Travel">
+                            <span class="play-button"></span>
+                        </div>
+                        <div class="card-info">
+                            <h3>Travel & Exploration</h3>
+                            <div class="card-meta">YouTube Upload</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Shorts Section -->
-        <section class="shorts-section" id="shorts">
+        <section id="shorts">
             <div class="container">
                 <div class="section-header">
                     <div>
@@ -117,73 +846,62 @@
                         <h2>YouTube Shorts</h2>
                         <p class="section-subtitle">Open Shorts on the official channel</p>
                     </div>
-                    <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="btn btn-secondary sm">
                         View All ↗
                     </a>
                 </div>
 
-                <div class="shorts-grid">
+                <div class="grid-6">
                     <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="short-card">
                         <div class="short-thumb">
-                            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=300&q=80" 
-                                 alt="City lights short" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=500&q=80" alt="Latest Shorts">
                             <span class="short-tag">▶ SHORTS</span>
                         </div>
-                        <h3 class="short-title">Latest Shorts ↗</h3>
+                        <div class="short-title">Latest Shorts ↗</div>
                     </a>
-
                     <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="short-card">
                         <div class="short-thumb">
-                            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=300&q=80" 
-                                 alt="Landscape short" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=500&q=80" alt="Travel Nature">
                             <span class="short-tag">▶ SHORTS</span>
                         </div>
-                        <h3 class="short-title">Travel & Nature 🌿</h3>
+                        <div class="short-title">Travel & Nature 🌿</div>
                     </a>
-
                     <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="short-card">
                         <div class="short-thumb">
-                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=80" 
-                                 alt="Sports car short" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80" alt="Cars Auto">
                             <span class="short-tag">▶ SHORTS</span>
                         </div>
-                        <h3 class="short-title">Cars & Auto 🏎️</h3>
+                        <div class="short-title">Cars & Auto 🏎️</div>
                     </a>
-
                     <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="short-card">
                         <div class="short-thumb">
-                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=300&q=80" 
-                                 alt="Smartphone short" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Tech Gadgets">
                             <span class="short-tag">▶ SHORTS</span>
                         </div>
-                        <h3 class="short-title">Tech & Gadgets 📱</h3>
+                        <div class="short-title">Tech & Gadgets 📱</div>
                     </a>
-
                     <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="short-card">
                         <div class="short-thumb">
-                            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=300&q=80" 
-                                 alt="Mountains short" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=500&q=80" alt="Explore More">
                             <span class="short-tag">▶ SHORTS</span>
                         </div>
-                        <h3 class="short-title">Explore More ✈️</h3>
+                        <div class="short-title">Explore More ✈️</div>
                     </a>
-
                     <a href="https://www.youtube.com/@Reshwanth_YT/shorts" target="_blank" rel="noopener noreferrer" class="short-card">
                         <div class="short-thumb">
-                            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=300&q=80" 
-                                 alt="Sunrise short" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=500&q=80" alt="Positive Vibes">
                             <span class="short-tag">▶ SHORTS</span>
                         </div>
-                        <h3 class="short-title">Positive Vibes ✨</h3>
+                        <div class="short-title">Positive Vibes ✨</div>
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+        <section>
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-box">
                     <div class="cta-text">
                         <span class="section-label">Join the community</span>
                         <h2>Enjoying the content?</h2>
@@ -197,20 +915,18 @@
         </section>
 
         <!-- About Section -->
-        <section class="about-section" id="about">
+        <section id="about">
             <div class="container">
                 <div class="about-grid">
-                    <!-- About Card -->
                     <div class="about-card">
                         <span class="section-label">About the channel</span>
                         <h2>Welcome to RESHWANTH YT</h2>
                         <p>This is the official home for my YouTube videos and Shorts. Explore my latest uploads and be part of the journey. Thanks for supporting!</p>
-                        <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="btn btn-secondary sm">
                             Visit Channel ↗
                         </a>
                     </div>
 
-                    <!-- Stats Card -->
                     <div class="about-card">
                         <span class="section-label">Stay connected</span>
                         <h2>One channel. More to explore.</h2>
@@ -233,30 +949,10 @@
                 </div>
             </div>
         </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <div class="section-header">
-                    <div>
-                        <span class="section-label">Get in touch</span>
-                        <h2>Connect with me</h2>
-                        <p class="section-subtitle">Reach out on social media or YouTube</p>
-                    </div>
-                </div>
-                <div class="contact-grid">
-                    <a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <div class="contact-icon">📺</div>
-                        <h3>YouTube</h3>
-                        <p>Subscribe and watch all my content</p>
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -277,7 +973,7 @@
                 <div class="footer-section">
                     <h4>Follow</h4>
                     <ul>
-                        <li><a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                        <li><a href="https://www.youtube.com/@Reshwanth_YT" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
                     </ul>
                 </div>
             </div>
@@ -287,7 +983,41 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script>
+        // Year update
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+            });
+
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('open');
+                });
+            });
+        }
+
+        // Smooth scroll offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
