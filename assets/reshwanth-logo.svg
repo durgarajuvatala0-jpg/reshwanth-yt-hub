@@ -1,0 +1,60 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">RESHWANTH YT logo</title>
+  <desc id="desc">A premium circular creator logo with golden glow, a stylized Y and bird, and the text Reshwanth YT.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff6c0"/>
+      <stop offset="22%" stop-color="#f4d66b"/>
+      <stop offset="50%" stop-color="#efb21a"/>
+      <stop offset="72%" stop-color="#f5d974"/>
+      <stop offset="100%" stop-color="#ffb000"/>
+    </linearGradient>
+    <radialGradient id="innerGlow" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#1d1d1d"/>
+      <stop offset="40%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="600" cy="600" r="530" fill="rgba(0,0,0,0.7)"/>
+  <circle cx="600" cy="600" r="500" fill="url(#innerGlow)" stroke="url(#gold)" stroke-width="18"/>
+  <circle cx="600" cy="600" r="485" fill="none" stroke="url(#gold)" stroke-width="8" opacity="0.9" filter="url(#softGlow)"/>
+
+  <g opacity="0.9">
+    <path d="M270 345 L390 345 L450 445 L480 510 L530 445 L600 350 L690 350 L590 520 L620 630 L540 620 L500 710 L456 620 L382 628 L415 520 L350 450 Z" fill="url(#gold)" filter="url(#softGlow)"/>
+    <path d="M535 455 L635 455 L750 700 L670 700 L606 570 L545 700 L470 700 Z" fill="url(#gold)"/>
+  </g>
+
+  <g transform="translate(0 12)">
+    <path d="M450 460 C500 410, 575 380, 630 420 C630 360, 700 350, 760 400 C780 425, 800 470, 810 500 C825 540, 820 590, 790 625 C760 660, 720 675, 682 670 L690 760 L635 760 L635 688 C600 695, 560 690, 520 670 C485 650, 450 620, 435 560 C420 500, 420 480, 450 460 Z" fill="#fff" opacity="0.95"/>
+    <path d="M575 500 L610 610 L652 671 L600 636 L550 688 L565 600 Z" fill="#000" opacity="0.8"/>
+    <path d="M630 668 L690 690 L720 760 L670 760 L630 698 Z" fill="#000" opacity="0.8"/>
+  </g>
+
+  <g opacity="0.95">
+    <path d="M830 445 C875 420, 940 420, 975 445 C936 455, 915 495, 905 540 C895 585, 890 622, 857 640 C818 661, 772 640, 752 601 C770 565, 790 535, 830 445 Z" fill="#fff"/>
+    <path d="M855 430 L884 462 L914 430 L972 430 L930 495 L1004 540 L960 585 L925 570 L872 630 L842 573 L782 592 L824 531 L775 494 L834 470 Z" fill="url(#gold)"/>
+  </g>
+
+  <g>
+    <path d="M645 615 C700 540, 760 510, 835 512 C878 514, 918 528, 954 552 L920 584 C895 570, 860 564, 825 566 C770 570, 720 595, 678 655 Z" fill="url(#gold)" opacity="0.92"/>
+  </g>
+
+  <g font-family="Impact, Arial Black, sans-serif" text-anchor="middle">
+    <text x="600" y="760" font-size="170" fill="url(#gold)" letter-spacing="-5" font-weight="900">Reshwanth</text>
+    <text x="600" y="900" font-size="150" fill="url(#gold)" letter-spacing="-5" font-weight="900">YT</text>
+    <text x="600" y="980" font-size="52" fill="#f5f5f5" letter-spacing="12" opacity="0.9">CONTENT CREATOR</text>
+  </g>
+
+  <g>
+    <circle cx="600" cy="1005" r="32" fill="url(#gold)"/>
+    <path d="M588 990 L612 1005 L588 1020 Z" fill="#111"/>
+  </g>
+</svg>
